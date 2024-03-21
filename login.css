@@ -1,0 +1,75 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    background-image:url( "lipi\ \(5\).png"); 
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Do not repeat */
+    background-position: center; /* Center the background image */
+    color: #333;
+}
+/* Container styles */
+.container {
+    width: 35%; /* Reduced container width */
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px; /* Reduced margin-top */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+    transform: translate(75%,0%);
+}
+
+.container h1 {
+    font-size: 2.8rem; /* Increased font size */
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Pacifico', Arial, sans-serif;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.4rem; /* Increased font size */
+    margin-top: 20px; /* Increased margin-top */
+    color: #555; /* Changed text color */
+}
+
+input {
+    width: 80%; /* Reduced input width */
+    padding: 10px; /* Increased padding */
+    margin-top: 10px; /* Increased margin-top */
+    margin-bottom: 20px;
+    border-radius: 10px; /* Increased border radius */
+    border: 1px solid #ccc; /* Light grey border */
+}
+
+button {
+    background-color: #252321; /* Orange button */
+    color: #fcf4f2;
+    border: none;
+    padding: 15px 30px; /* Increased padding */
+    font-size: 1.4rem; /* Increased font size */
+    border-radius: 10px; /* Increased border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.anch{
+    color: #fcf4f2;
+}
+button:hover {
+    background-color: orange; /* Darker orange on hover */
+}

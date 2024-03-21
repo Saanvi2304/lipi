@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .menu-content .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .menu-content .image-button {
+            border: none;
+            background: none;
+            padding: 0;
+        }
+        
+        .menu-content .image-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .menu-content .image-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .content {
+            display: flex;
+        }
+        .topnav {
+            background-color: #333;
+            overflow: hidden;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+        }
+        .topnav img {
+            height: 40px; 
+            margin-left: 20px;
+        }
+        .search-bar {
+            margin: 0 120px;
+            flex: 1;
+        }
+        .search-bar input[type="text"] {
+            width: 60%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+        .topnav button {
+            margin-right: 20px;
+            padding: 8px 16px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .topnav button:hover {
+            background-color: #ccc;
+        }
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .menu-frame {
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            left: 0;
+            top: 50px; 
+            bottom: 0;
+            overflow-y: auto; /* Enable scrolling if content overflows */
+        }
+        .menu-content {
+            padding: 20px;
+        }
+        .menu-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-content ul li a {
+            color: #333; /* Changed text color */
+            text-decoration: none;
+            transition: text-shadow 0.5s; /* Added transition */
+        }
+        .menu-content ul li a:hover {
+            background-color: #ddd;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #f8a71b, 0 0 30px #f8a71b, 0 0 40px #f8a71b, 0 0 55px #f8a71b; /* Added glow effect */
+        }
+        /* Styles for the dropdown */
+        .dropdown {
+            position: relative;
+            display: block;
+            margin-bottom: 20px;
+        }
+        /* Styles for the iframe */
+        .iframe-container {
+            flex: 1;
+            padding: 20px;
+            margin-left: 200px; /* Adjusted to accommodate the menu frame */
+            height: calc(100vh - 50px); /* Adjusted to occupy remaining space on the webpage */
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .dropbtn{
+            text-decoration: none;
+            padding: 10px;
+            color: black;
+        }
+        .dropbtn:hover{
+            background-color: aliceblue;
+        }
+        .logo{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="topnav">
+    <img src="dil.jpeg" alt="Logo" class="logo" >
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+    <a href="#">Filter <i class="fa fa-filter"></i></a>
+    <a href="#">Sort <i class="fa fa-sort"></i></a>
+    <a href="#">Sign Out <i class="fa fa-sign-out"></i></a>
+</div>
+
+<div class="content">
+    <div class="menu-frame">
+        <div class="menu-content">
+            <div class="home">
+                <a href="#"></a>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Subjects <i class="fa fa-caret-down"></i></a>
+                <div class="menu-content" id="subjectDropdown" style="display: none;">
+                    <ul>
+                        <li><a href="#">Mathematics</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">History</a></li>
+                        <!-- Add more subjects as needed -->
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Recent Books <i class="fa fa-caret-down"></i></a>
+                <div class="menu-content" id="recentBooksDropdown" style="display: none;">
+                    <ul>
+                        <li><a href="#">Book 1</a></li>
+                        <li><a href="#">Book 2</a></li>
+                        <li><a href="#">Book 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <iframe src="your_content_page.html" frameborder="0"></iframe>
+    </div>
+</div>
+
+<script>
+    // JavaScript to toggle visibility of the subjects dropdown
+    document.querySelector('.dropbtn').addEventListener('click', function(event) {
+        event.preventDefault();
+        var subjectDropdown = document.getElementById('subjectDropdown');
+        subjectDropdown.style.display = (subjectDropdown.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // JavaScript to toggle visibility of the recent books dropdown
+    document.querySelectorAll('.dropbtn')[1].addEventListener('click', function(event) {
+        event.preventDefault();
+        var recentBooksDropdown = document.getElementById('recentBooksDropdown');
+        recentBooksDropdown.style.display = (recentBooksDropdown.style.display === 'block') ? 'none' : 'block';
+    });
+</script>
+
+</body>
+</html>

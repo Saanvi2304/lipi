@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu-content .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+        
+        .menu-content .image-button {
+            border: none;
+            background: none;
+            padding: 0;
+        }
+        
+        .menu-content .image-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+        
+        .menu-content .image-button:hover {
+            transform: scale(1.1);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="menu-content">
+        <div class="buttons-container">
+            <!-- Button 1 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class1.jpeg" alt="Button 1"></button>
+            <!-- Button 2 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class2.jpeg" alt="Button 2"></button>
+            <!-- Button 3 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class3.jpeg" alt="Button 3"></button>
+            <!-- Button 4 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class4.jpeg" alt="Button 4"></button>
+            <!-- Button 5 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class5.jpeg" alt="Button 5"></button>
+            <!-- Button 6 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class6.jpeg" alt="Button 6"></button>
+            <!-- Button 7 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class7.jpeg" alt="Button 7"></button>
+            <!-- Button 8 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class8.jpeg" alt="Button 8"></button>
+            <!-- Button 9 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class9.jpeg" alt="Button 9"></button>
+            <!-- Button 10 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class10.jpeg" alt="Button 10"></button>
+            <!-- Button 11 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class11.jpeg" alt="Button 11"></button>
+            <!-- Button 12 -->
+            <button class="image-button" onclick="navigateTo('class1.html')"><img src="class12.jpeg" alt="Button 12"></button>
+        </div>
+    </div>
+    
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
